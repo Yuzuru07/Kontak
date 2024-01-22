@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1050285081481",
+    "project_id": "quantumconnect-145bf",
+    "storage_bucket": "quantumconnect-145bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050285081481:android:40bab0bdd757029da59758",
+        "android_client_info": {
+          "package_name": "com.example.kontak"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3yGRyrQu10kg4R4vMc6be6aiYd71Gwxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
