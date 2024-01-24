@@ -2,6 +2,8 @@
 
 Project Aplikasi Kontak yang dibuat menggunakan Flutter dan SQFLite
 
+![image](https://github.com/Yuzuru07/Kontak/assets/109451963/2268d402-cd7b-4c7b-a970-17ea11e98fce)
+
 ## Getting Started?
 
 
