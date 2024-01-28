@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Quantum Connect',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.soraTextTheme(),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange.shade800),
