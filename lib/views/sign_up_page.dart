@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPG extends StatefulWidget {
-  const LoginPG({super.key});
+class SignUpPG extends StatefulWidget {
+  const SignUpPG({super.key});
 
   @override
-  State<LoginPG> createState() => _LoginPGState();
+  State<SignUpPG> createState() => _SignUpPGState();
 }
 
-class _LoginPGState extends State<LoginPG> {
+class _SignUpPGState extends State<SignUpPG> {
   final TextEditingController _emailCont = TextEditingController();
   final TextEditingController _passCont = TextEditingController();
   @override
@@ -18,7 +18,7 @@ class _LoginPGState extends State<LoginPG> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Login",
+            "Sign Up",
             style: GoogleFonts.sora(fontSize: 53, fontWeight: FontWeight.w300),
           ),
           const SizedBox(
@@ -51,7 +51,7 @@ class _LoginPGState extends State<LoginPG> {
             child: ElevatedButton(
                 onPressed: () {},
                 child: const Text(
-                  "Login",
+                  "Sign Up",
                   style: TextStyle(fontSize: 17),
                 )),
           ),
@@ -86,12 +86,12 @@ class _LoginPGState extends State<LoginPG> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("Tidak punya akun?"),
+              const Text("Sudah punya akun?"),
               TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, "/signup");
+                    Navigator.pop(context);
                   },
-                  child: const Text("Sign Up"))
+                  child: const Text("Login"))
             ],
           )
         ],

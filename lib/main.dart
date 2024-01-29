@@ -2,7 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kontak/firebase_options.dart';
+import 'package:kontak/views/home.dart';
 import 'package:kontak/views/login_page.dart';
+import 'package:kontak/views/sign_up_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +28,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange.shade800),
         useMaterial3: true,
       ),
-      routes: {"/": (context) => const LoginPG()},
+      routes: {
+        "/": (context) => const LoginPG(),
+        "/home": (context) => const HomePage(),
+        "/signup": (context) => const SignUpPG(),
+        "/login": (context) => const LoginPG()
+      },
     );
   }
 }
