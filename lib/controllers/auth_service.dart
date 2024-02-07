@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   // Buat amkun pakai email&pass method
@@ -32,5 +33,25 @@ class AuthService {
   Future<bool> isLoggedIn() async {
     var user = FirebaseAuth.instance.currentUser;
     return user != null;
+  }
+
+  // Loggin pakai akun gugel anda
+  Future<String> continueWithGoogle() async {
+    try {
+      // Kirim Auth request
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      final GoogleSignInAuthentication gAuth = await googleUser!.authentication;
+
+      // Ambil kredensial
+      final creds = GoogleAuthProvider.credential(
+          accessToken: gAuth.accessToken, idToken: gAuth.idToken);
+
+      // Baru login pakai kredensial tdi
+      await FirebaseAuth.instance.signInWithCredential(creds);
+
+      return "Google login";
+    } on FirebaseAuthException catch (e) {
+      return e.message.toString();
+    }
   }
 }
