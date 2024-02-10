@@ -14,6 +14,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Quantum Connect")),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, "/add");
+        },
+        child: const Icon(Icons.person_add_alt_1_rounded),
+      ),
       drawer: Drawer(
         child: ListView(
           children: [
