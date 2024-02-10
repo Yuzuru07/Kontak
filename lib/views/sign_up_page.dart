@@ -94,7 +94,25 @@ class _SignUpPGState extends State<SignUpPG> {
                 height: 43,
                 width: 300,
                 child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      AuthService().continueWithGoogle().then((value) {
+                        if (value == "Google login") {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text(
+                                      "Login menggunakan Google berhasil!")));
+                          Navigator.pushReplacementNamed(context, "/home");
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text(
+                              value,
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                            backgroundColor: Colors.red.shade600,
+                          ));
+                        }
+                      });
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
