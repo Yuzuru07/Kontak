@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kontak/controllers/auth_service.dart';
 import 'package:kontak/controllers/crud_service.dart';
+import 'package:kontak/views/update_contact_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -69,6 +70,15 @@ class _HomePageState extends State<HomePage> {
                     Map<String, dynamic> data =
                         document.data()! as Map<String, dynamic>;
                     return ListTile(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UpdateContact(
+                                    docID: document.id,
+                                    name: data["name"],
+                                    phone: data["phone"],
+                                    email: data["email"],
+                                  ))),
                       leading: CircleAvatar(
                         child: Text(data["name"][0]),
                       ),

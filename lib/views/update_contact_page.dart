@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:kontak/controllers/crud_service.dart';
 
 class UpdateContact extends StatefulWidget {
-  const UpdateContact({super.key});
+  const UpdateContact(
+      {super.key,
+      required this.docID,
+      required this.name,
+      required this.phone,
+      required this.email});
+  final String docID, name, phone, email;
 
   @override
   State<UpdateContact> createState() => _UpdateContactState();
@@ -13,11 +19,20 @@ class _UpdateContactState extends State<UpdateContact> {
   final TextEditingController _nameCont = TextEditingController();
   final TextEditingController _emailCont = TextEditingController();
   final TextEditingController _phoneCont = TextEditingController();
+
+  @override
+  void initState() {
+    _emailCont.text = widget.email;
+    _nameCont.text = widget.name;
+    _phoneCont.text = widget.phone;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tambah Kontak"),
+        title: const Text("Update Kontak"),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -72,8 +87,8 @@ class _UpdateContactState extends State<UpdateContact> {
                   child: ElevatedButton(
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          CRUDservice().addNewContacts(
-                              _nameCont.text, _phoneCont.text, _emailCont.text);
+                          CRUDservice().updateContact(_nameCont.text,
+                              _phoneCont.text, _emailCont.text, widget.docID);
                           Navigator.pop(context);
                         }
                       },

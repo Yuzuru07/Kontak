@@ -26,7 +26,7 @@ void main() async {
       "/home": (context) => const HomePage(),
       "/signup": (context) => const SignUpPG(),
       "/login": (context) => const LoginPG(),
-      "/add": (context) => const AddContact()
+      "/add": (context) => const UpdateContact()
     },
   ));
 }

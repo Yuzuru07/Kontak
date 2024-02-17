@@ -13,7 +13,7 @@ class CRUDservice {
           .doc(user!.uid)
           .collection("contacts")
           .add(data);
-      print("Doc added");
+      print("Doc Added");
     } catch (e) {
       print(e.toString());
     }
@@ -29,5 +29,22 @@ class CRUDservice {
         .snapshots();
 
     yield* contacts;
+  }
+
+  // Update dokumen
+  Future updateContact(
+      String name, String phone, String email, String docID) async {
+    Map<String, dynamic> data = {"name": name, "email": email, "phone": phone};
+    try {
+      await FirebaseFirestore.instance
+          .collection("users")
+          .doc(user!.uid)
+          .collection("contacts")
+          .doc(docID)
+          .update(data);
+      print("Document Upated");
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }
