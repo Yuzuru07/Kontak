@@ -20,14 +20,20 @@ class CRUDservice {
   }
 
   // Baca dokumen dari FireStore
-  Stream<QuerySnapshot> getContact() async* {
-    var contacts = FirebaseFirestore.instance
+  Stream<QuerySnapshot> getContact({String? searchQuery}) async* {
+    var contactsQuery = FirebaseFirestore.instance
         .collection("users")
         .doc(user!.uid)
         .collection("contacts")
-        .orderBy("name")
-        .snapshots();
+        .orderBy("name");
 
+    // FIlter utk search
+    if (searchQuery != null && searchQuery.isNotEmpty) {
+      String searchEnd = "$searchQuery\uf8ff";
+      contactsQuery = contactsQuery.where("name",
+          isGreaterThanOrEqualTo: searchQuery, isLessThan: searchEnd);
+    }
+    var contacts = contactsQuery.snapshots();
     yield* contacts;
   }
 
@@ -43,6 +49,21 @@ class CRUDservice {
           .doc(docID)
           .update(data);
       print("Document Upated");
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  // Hapus dokumen di Firestore
+  Future deleteContact(String docID) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection("users")
+          .doc(user!.uid)
+          .collection("contacts")
+          .doc(docID)
+          .delete();
+      print("Contact Deleted");
     } catch (e) {
       print(e.toString());
     }

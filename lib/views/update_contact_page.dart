@@ -93,7 +93,23 @@ class _UpdateContactState extends State<UpdateContact> {
                         }
                       },
                       child: const Text(
-                        "Tambahkan",
+                        "Update",
+                        style: TextStyle(fontSize: 17),
+                      )),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                SizedBox(
+                  height: 43,
+                  width: 300,
+                  child: OutlinedButton(
+                      onPressed: () {
+                        CRUDservice().deleteContact(widget.docID);
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        "Hapus",
                         style: TextStyle(fontSize: 17),
                       )),
                 ),
