@@ -1,6 +1,6 @@
 # Kontak
 
-Project Aplikasi Kontak yang dibuat menggunakan Flutter dan SQFLite untuk TAS Pemrograman Berorientasi Objek
+Project Aplikasi Kontak yang dibuat menggunakan Flutter dan SQFLite untuk Tugas Akhir Semester (TAS) Pemrograman Berorientasi Objek
 
 ![image](https://github.com/Yuzuru07/Kontak/assets/109451963/2268d402-cd7b-4c7b-a970-17ea11e98fce)
 
