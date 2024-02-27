@@ -1,4 +1,4 @@
-# Kontak
+# Quantum Connect
 
 Project Aplikasi Kontak yang dibuat menggunakan Flutter dan SQFLite untuk Tugas Akhir Semester (TAS) Pemrograman Berorientasi Objek
 
