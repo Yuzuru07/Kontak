@@ -1,6 +1,6 @@
 # Quantum Connect
 
-Project Aplikasi Kontak yang dibuat menggunakan Flutter dan FIrebase untuk Tugas Akhir Semester (TAS) Pemrograman Berorientasi Objek
+Project Aplikasi Kontak berbasis Android yang dibuat menggunakan Flutter dan Firebase untuk Tugas Akhir Semester (TAS) Pemrograman Berorientasi Objek
 
 ![1_eL-dHo08RwyLYOl17DNTog](https://github.com/Yuzuru07/Kontak/assets/109451963/f096d692-8a8a-4452-9648-27a4a720f973)
 
