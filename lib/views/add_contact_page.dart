@@ -33,7 +33,7 @@ class _UpdateContactState extends State<UpdateContact> {
                     width: MediaQuery.of(context).size.width * .7,
                     child: TextFormField(
                       validator: (value) => value!.isEmpty
-                          ? "Nama tidak boleh komsong, isi apa saja"
+                          ? "Nama tidak boleh kosong"
                           : null,
                       controller: _nameCont,
                       decoration: const InputDecoration(
@@ -46,7 +46,7 @@ class _UpdateContactState extends State<UpdateContact> {
                     width: MediaQuery.of(context).size.width * .7,
                     child: TextFormField(
                       validator: (value) => value!.isEmpty
-                          ? "Nomor telepon tidak boleh komsong, apa yg anda simpan?"
+                          ? "Nomor telepon tidak boleh kosong"
                           : null,
                       controller: _phoneCont,
                       decoration: const InputDecoration(

@@ -124,14 +124,14 @@ class _HomePageState extends State<HomePage> {
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (snapshot.hasError) {
-              return const Text("Ada yg emror");
+              return const Text("Ada yg error");
             }
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: Text("Memuat..."));
             }
             return snapshot.data!.docs.isEmpty
                 ? const Center(
-                    child: Text("Kontak tidak ditemukan..."),
+                    child: Text("Kontak tidak berhasil di temukan..."),
                   )
                 : ListView(
                     children: snapshot.data!.docs
