@@ -16,9 +16,15 @@ void main() async {
   runApp(MaterialApp(
     title: 'Quantum Connect',
     debugShowCheckedModeBanner: false,
+    themeMode: ThemeMode.system,
     theme: ThemeData(
       textTheme: GoogleFonts.soraTextTheme(),
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange.shade800),
+      useMaterial3: true,
+    ),
+    darkTheme: ThemeData(
+      textTheme: GoogleFonts.soraTextTheme(),
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange, brightness: Brightness.dark),
       useMaterial3: true,
     ),
     routes: {

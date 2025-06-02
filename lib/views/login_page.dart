@@ -23,8 +23,12 @@ class _LoginPGState extends State<LoginPG> {
           children: [
             Text(
               "Login",
-              style:
-                  GoogleFonts.sora(fontSize: 53, fontWeight: FontWeight.w300),
+              style: GoogleFonts.sora(fontSize: 53, fontWeight: FontWeight.w300)
+                  .copyWith(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black,
+              ),
             ),
             const SizedBox(
               height: 80,
@@ -134,7 +138,12 @@ class _LoginPGState extends State<LoginPG> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Tidak punya akun?"),
+                Text("Tidak punya akun?",
+                    style: TextStyle(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black,
+                    )),
                 TextButton(
                     onPressed: () {
                       Navigator.pushNamed(context, "/signup");
