@@ -36,26 +36,34 @@ class _LoginPGState extends State<LoginPG> {
             SizedBox(
                 width: MediaQuery.of(context).size.width * .7,
                 child: TextFormField(
-                  validator: (value) =>
-                      value!.isEmpty ? "Email tidak boleh kosong!" : null,
-                  controller: _emailCont,
-                  decoration: const InputDecoration(
-                      border: OutlineInputBorder(), label: Text("Email")),
-                )),
+                    validator: (value) =>
+                        value!.isEmpty ? "Email tidak boleh kosong!" : null,
+                    controller: _emailCont,
+                    decoration: const InputDecoration(
+                        border: OutlineInputBorder(), label: Text("Email")),
+                    style: TextStyle(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black,
+                    ))),
             const SizedBox(
               height: 30,
             ),
             SizedBox(
                 width: MediaQuery.of(context).size.width * .7,
                 child: TextFormField(
-                  validator: (value) => value!.length < 8
-                      ? "Password harus memiliki setidaknya 8 karakter."
-                      : null,
-                  controller: _passCont,
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                      border: OutlineInputBorder(), label: Text("Password")),
-                )),
+                    validator: (value) => value!.length < 8
+                        ? "Password harus memiliki setidaknya 8 karakter."
+                        : null,
+                    controller: _passCont,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                        border: OutlineInputBorder(), label: Text("Password")),
+                    style: TextStyle(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black,
+                    ))),
             const SizedBox(
               height: 50,
             ),

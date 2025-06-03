@@ -41,6 +41,11 @@ class _SignUpPGState extends State<SignUpPG> {
                   controller: _emailCont,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(), label: Text("Email")),
+                      style: TextStyle(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black,
+                    )
                 )),
             const SizedBox(
               height: 30,
@@ -55,6 +60,11 @@ class _SignUpPGState extends State<SignUpPG> {
                   obscureText: true,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(), label: Text("Password")),
+                      style: TextStyle(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black,
+                    )
                 )),
             const SizedBox(
               height: 50,

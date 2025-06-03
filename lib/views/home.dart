@@ -103,7 +103,12 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                Text(FirebaseAuth.instance.currentUser!.email.toString())
+                Text(FirebaseAuth.instance.currentUser!.email.toString(),
+                    style: TextStyle(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black,
+                    ))
               ],
             )),
             ListTile(
